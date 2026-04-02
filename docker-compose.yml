@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   # Ollama LLM Service
   ollama:
@@ -10,23 +8,17 @@ services:
     volumes:
       - ollama_data:/root/.ollama
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
 
-  # Model Puller (runs once to download gemma3:4b)
+  # Model Puller
   ollama-pull:
     image: ollama/ollama
     container_name: ollama-pull
     depends_on:
-      ollama:
-        condition: service_healthy
+      - ollama
     volumes:
       - ollama_data:/root/.ollama
     entrypoint: >
-      /bin/sh -c "ollama pull gemma3:4b"
+      /bin/sh -c "sleep 10 && ollama pull gemma3:4b"
     environment:
       - OLLAMA_HOST=http://ollama:11434
     restart: "no"
@@ -46,8 +38,7 @@ services:
     volumes:
       - ./model:/app/model
     depends_on:
-      ollama:
-        condition: service_healthy
+      - ollama
     restart: unless-stopped
 
 volumes:

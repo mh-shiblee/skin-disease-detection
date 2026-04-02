@@ -26,8 +26,5 @@ COPY . .
 EXPOSE 8000
 EXPOSE 8501
 
-# Start script
-COPY start.sh .
-RUN chmod +x start.sh
-
-CMD ["./start.sh"]
+COPY start.py .
+CMD ["python", "start.py"]
