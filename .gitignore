@@ -1,0 +1,19 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+
+# Model weights (too large for GitHub)
+*.pth
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/

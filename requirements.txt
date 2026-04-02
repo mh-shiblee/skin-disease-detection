@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+torch
+torchvision
+timm
+Pillow
+numpy
+python-dotenv
+streamlit
+requests
+sqlalchemy
+google-genai
