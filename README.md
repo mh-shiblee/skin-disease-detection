@@ -101,7 +101,7 @@ Ollama : http://localhost:11434
 ```
 
 Local Setup
-
+# get model weight(swinv2_tiny) from the kaggle link: https://www.kaggle.com/code/mahmudulhasanshiblee/excel-tech-task-2
 # Clone repository
 
 git clone https://github.com/yourusername/skin-disease-detection.git
