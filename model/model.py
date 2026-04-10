@@ -1,5 +1,3 @@
-# model/model.py
-
 import torch
 import torch.nn as nn
 import timm
@@ -10,7 +8,7 @@ class SkinClassifier(nn.Module):
         super(SkinClassifier, self).__init__()
 
         self.backbone = timm.create_model(
-            'efficientnet_b4',
+            'swinv2_tiny_window8_256',
             pretrained=pretrained,
             num_classes=0,
             global_pool='avg'

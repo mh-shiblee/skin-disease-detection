@@ -21,8 +21,11 @@ load_dotenv()
 # Config
 # ============================================================
 
-MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__))), "model", "skin_efficientnet_b4.pth")
+MODEL_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "model",
+    "swinv2_skin.pth"
+)
 GEMINI_KEY = os.getenv("GEMINI_API_KEY")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
